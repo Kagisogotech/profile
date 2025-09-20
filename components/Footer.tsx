@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
                  <div className="mb-6">
                     <SocialLinks iconSize="w-6 h-6" />
                 </div>
-                <p>&copy; {new Date().getFullYear()} Kagiso. All Rights Reserved.</p>
+                <p>&copy; {new Date().getFullYear()} Kagiso Monene. All Rights Reserved.</p>
                 <p className="text-sm mt-2 font-creative text-emerald-400 italic tracking-wide">
   Designed with passion by a creative soul.
 </p>
