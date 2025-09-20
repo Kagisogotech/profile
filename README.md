@@ -1,24 +1,40 @@
-<<<<<<< HEAD
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Kagiso — Creative Portfolio
 
-# Run and deploy your AI Studio app
+This is a personal portfolio website showcasing the work, skills, and personality of **Kagiso**. It serves as a platform to present past projects, share contact information, and illustrate design or development capabilities.
 
-This contains everything you need to run your app locally.
+🔗 **Live Site:** [profile-beta-gray.vercel.app](https://profile-beta-gray.vercel.app/)
 
-View your app in AI Studio: https://ai.studio/apps/drive/1CPIomMl8chZc6B_lrm5qrj330pmuvSjh
+---
 
-## Run Locally
+## 📌 Features
 
-**Prerequisites:**  Node.js
+- Clean, modern UI design  
+- Responsive layout — works well on mobile, tablet, and desktop  
+- Sections for:
+  - About / Bio  
+  - Portfolio / Projects  
+  - Skills  
+  - Contact information  
+- Smooth navigation  
+- Fast load times  
 
+---
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
-=======
-# profile
->>>>>>> 2409194eff4a762a4906acc8a0bc3859a92bacf0
+## 🛠 Tech Stack
+
+- **React** (frontend framework)  
+- **Tailwind CSS** (styling)  
+- **JavaScript / TypeScript**  
+- **Vercel** (deployment & hosting)  
+
+---
+
+## 🚀 Getting Started
+
+To run this project locally:
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/yourusername/portfolio.git
+   cd portfolio
