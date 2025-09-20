@@ -50,7 +50,12 @@ const Header: React.FC = () => {
                         <ul className="flex items-center space-x-8">
                             {navItems.map((item) => (
                                 <li key={item.name}>
-                                    <a href={item.href} className="text-neutral-300 hover:text-white transition-colors duration-300">{item.name}</a>
+                                    <a 
+                                        href={item.href} 
+                                        className="text-neutral-300 hover:text-white transition-colors duration-300 relative after:absolute after:left-0 after:-bottom-1 after:w-0 hover:after:w-full after:h-0.5 after:bg-emerald-400 after:transition-all after:duration-300"
+                                    >
+                                        {item.name}
+                                    </a>
                                 </li>
                             ))}
                         </ul>
