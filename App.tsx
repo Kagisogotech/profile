@@ -63,14 +63,14 @@ const certificates: Certificate[] = [
     title: 'AI For Everyone',
     issuer: 'DeepLearning.AI',
     imageUrl: 'https://storage.googleapis.com/aistudio-hosting/project-assets/portfolio-certs/deeplearning-ai.png',
-    pdfUrl: './AI for Everyone.pdf',
+    pdfUrl: '/certificates/AI for Everyone.pdf',
     verificationUrl: 'https://coursera.org/verify/SU6A371G886I',
   },
   {
     title: 'Generative AI with Large Language Models',
     issuer: 'DeepLearning.AI & AWS',
     imageUrl: 'https://storage.googleapis.com/aistudio-hosting/project-assets/portfolio-certs/aws-deeplearning-gen-ai.png',
-    pdfUrl: 'certificates/Generative AI with LLM.pdf',
+    pdfUrl: '/certificates/Generative AI with LLM.pdf',
     verificationUrl: 'https://coursera.org/verify/FPMK22ICO8M6',
   },
   {
