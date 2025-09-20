@@ -18,7 +18,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY }) => {
                     backgroundImage: "url('images/img3-1.jpg')",
                     backgroundPosition: "top center",
                     transform: `translateY(${scrollY * 0.5}px) scale(1.05)`,
-                    filter: 'blur(3px)',
+                    filter: 'blur(2px)',
                     willChange: 'transform, filter',
                 }}
             />
