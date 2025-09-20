@@ -63,7 +63,7 @@ const certificates: Certificate[] = [
     title: 'AI For Everyone',
     issuer: 'DeepLearning.AI',
     imageUrl: 'https://storage.googleapis.com/aistudio-hosting/project-assets/portfolio-certs/deeplearning-ai.png',
-    pdfUrl: '/AI for Everyone.pdf',
+    pdfUrl: 'AI for Everyone.pdf',
     verificationUrl: 'https://coursera.org/verify/SU6A371G886I',
   },
   {
