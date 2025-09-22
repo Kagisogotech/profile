@@ -59,12 +59,6 @@ const Header: React.FC = () => {
                                 </li>
                             ))}
                         </ul>
-                        <a href="mailto:kagiso.thierry31@gmail.com" className="border border-neutral-400 text-neutral-200 hover:border-white hover:text-white px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center group">
-                            Let's Talk
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                        </a>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -112,16 +106,6 @@ const Header: React.FC = () => {
                             </li>
                         ))}
                     </ul>
-                     <a 
-                        href="mailto:kagiso.thierry31@gmail.com" 
-                        className="mt-12 border border-emerald-500 text-emerald-400 hover:bg-emerald-500 hover:text-black px-8 py-3 rounded-full text-base font-semibold transition-all duration-300 flex items-center group"
-                        onClick={() => setIsMenuOpen(false)}
-                    >
-                        Let's Talk
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                    </a>
                 </div>
             )}
         </>
