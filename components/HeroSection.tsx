@@ -62,7 +62,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY }) => {
                 <h1 className="text-6xl md:text-8xl lg:text-8xl font-anton uppercase tracking-widest mb-4">
                     Kagiso Monene<span className="text-white-400">.</span>
                 </h1>
-                <h3 className="text-lg text-text-color dark:text-gray-300 h-7">{text}<span className="border-r-2 border-text-color dark:border-gray-300 animate-pulse" aria-hidden="true"></span></h3>
+                <h2 className="text-lg text-text-color dark:text-gray-300 h-7">{text}<span className="border-r-2 border-text-color dark:border-gray-300 animate-pulse" aria-hidden="true"></span></h2>
                 <p className="text-lg md:text-2xl text-neutral-300 max-w-2xl mx-auto">
                     A tech creator turning ideas into interactive web experiences and AI-powered tools. I make learning smarter, digital solutions simpler, and projects that leave an impact. Dive in and see what's possible.
                 </p>
