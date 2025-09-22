@@ -17,7 +17,7 @@ const SkillsSection = React.forwardRef<HTMLElement, SkillsSectionProps>((
     return (
         <section id="skills" className="py-20 md:py-32" ref={ref}>
             <div className="max-w-screen-xl mx-auto px-8">
-                <h2 className="text-4xl md:text-6xl font-anton uppercase mb-12 text-center">Technical Skills</h2>
+                <h2 className="text-4xl md:text-6xl font-anton uppercase mb-12 text-center">Skills</h2>
                 <div className="flex justify-center space-x-4 mb-10">
                     <button
                         onClick={() => setActiveSkillTab('frontend')}
@@ -27,7 +27,7 @@ const SkillsSection = React.forwardRef<HTMLElement, SkillsSectionProps>((
                                 : 'border border-neutral-600 text-neutral-400 hover:bg-neutral-800 hover:text-white'
                         }`}
                     >
-                        Front-End
+                        Technical
                     </button>
                     <button
                         onClick={() => setActiveSkillTab('backend')}
@@ -37,7 +37,7 @@ const SkillsSection = React.forwardRef<HTMLElement, SkillsSectionProps>((
                                 : 'border border-neutral-600 text-neutral-400 hover:bg-neutral-800 hover:text-white'
                         }`}
                     >
-                        Back-End
+                        Soft
                     </button>
                 </div>
 
