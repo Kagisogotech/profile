@@ -11,13 +11,13 @@ const ContactSection: React.FC = () => {
         if (!emailRegex.test(email)) {
             return false;
         }
-        
-        // Check for valid domain (has a dot after the @)
+
+        // Check for a valid domain (has a dot after the @)
         const domain = email.split('@')[1];
         if (!domain || domain.indexOf('.') === -1) {
             return false;
         }
-        
+
         // Check for common fake email patterns
         const fakeEmailPatterns = [
             /example\./i,
@@ -25,21 +25,20 @@ const ContactSection: React.FC = () => {
             /fake\./i,
             /temp\./i,
             /domain\./i,
-            /mail\./i,
             /user\./i
         ];
-        
+
         if (fakeEmailPatterns.some(pattern => pattern.test(domain))) {
             return false;
         }
-        
+
         return true;
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
-        
+
         // Clear error when user starts typing
         if (errors[name as keyof typeof errors]) {
             setErrors(prev => ({ ...prev, [name]: undefined }));
@@ -48,39 +47,39 @@ const ContactSection: React.FC = () => {
 
     const validateForm = (): boolean => {
         const newErrors: { email?: string; name?: string; message?: string } = {};
-        
+
         // Name validation
         if (!formData.name.trim()) {
             newErrors.name = 'Name is required';
         }
-        
+
         // Email validation
         if (!formData.email.trim()) {
             newErrors.email = 'Email is required';
         } else if (!isValidEmail(formData.email)) {
             newErrors.email = 'Please enter a valid email address with a proper domain';
         }
-        
+
         // Message validation
         if (!formData.message.trim()) {
             newErrors.message = 'Message is required';
         } else if (formData.message.trim().length < 10) {
             newErrors.message = 'Message should be at least 10 characters long';
         }
-        
+
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        
+
         if (!validateForm()) {
             return;
         }
-        
+
         setStatus('sending');
-        
+
         try {
             const response = await fetch("https://formspree.io/f/movkalkv", {
                 method: "POST",
@@ -93,11 +92,11 @@ const ContactSection: React.FC = () => {
                     message: formData.message
                 })
             });
-            
+
             if (response.ok) {
                 setStatus('success');
                 setFormData({ name: '', email: '', message: '' });
-                
+
                 // Reset status after a few seconds
                 setTimeout(() => setStatus('idle'), 4000);
             } else {
@@ -106,7 +105,7 @@ const ContactSection: React.FC = () => {
         } catch (error) {
             console.error('Error submitting form:', error);
             setStatus('error');
-            
+
             // Reset status after a few seconds
             setTimeout(() => setStatus('idle'), 4000);
         }
@@ -140,7 +139,7 @@ const ContactSection: React.FC = () => {
                             </p>
                         )}
                     </div>
-                     <div>
+                    <div>
                         <label htmlFor="email" className="block text-sm font-medium text-neutral-400 mb-2">Email Address</label>
                         <input
                             type="email"
