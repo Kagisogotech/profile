@@ -43,7 +43,7 @@ const Header: React.FC = () => {
         <>
             <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ease-in-out ${scrolled ? 'bg-black/80 backdrop-blur-sm shadow-xl' : 'bg-transparent'}`}>
                 <nav className="flex justify-between items-center p-6 md:p-8 max-w-screen-2xl mx-auto">
-                    <a href="#hero/" className="text-2xl font-bold text-white tracking-wide">KM</a>
+                    <a href="#hero" className="text-2xl font-bold text-white tracking-wide">KM</a>
                     
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center space-x-8">
