@@ -8,14 +8,14 @@ const ResumeSection: React.FC = () => {
                 <h2 className="text-4xl md:text-6xl font-anton uppercase mb-16">My Resume</h2>
                 <div className="mb-10">
                     <iframe
-                        src="docs/Kagiso_Monene CV .pdf"
+                        src="docs/Kagiso_Monenes CV .pdf"
                         title="Kagiso Monene's Resume Preview"
                         className="rounded-lg shadow-2xl border-4 border-neutral-800 mx-auto w-full max-w-lg"
                         style={{ minHeight: '500px' }}
                     />
                 </div>
                 <a 
-                    href="docs/Kagiso_Monene CV .pdf" 
+                    href="docs/Kagiso_Monenes CV .pdf" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="border border-emerald-500 text-emerald-400 hover:bg-emerald-500 hover:text-black px-8 py-3 rounded-full text-sm font-semibold transition-all duration-300 flex items-center group mx-auto w-fit"
