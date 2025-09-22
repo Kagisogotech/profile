@@ -20,14 +20,13 @@ const ContactSection: React.FC = () => {
         
         // Check for common fake email patterns
         const fakeEmailPatterns = [
-            'example.com',
-            'example.org',
-            'test.com',
-            'fake.com',
-            'temp.com',
-            'domain.com',
-            'mail.com',
-            'user.com'
+            /example\./i,
+            /test\./i,
+            /fake\./i,
+            /temp\./i,
+            /domain\./i,
+            /mail\./i,
+            /user\./i
         ];
         
         if (fakeEmailPatterns.some(pattern => pattern.test(domain))) {
