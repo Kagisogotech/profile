@@ -22,18 +22,20 @@ import CertificateModal from './components/CertificateModal';
 const frontendSkills: Skill[] = [
     { name: 'HTML5 & CSS3', level: 95 },
     { name: 'JavaScript (ES6+)', level: 90 },
-    { name: 'TypeScript', level: 85 },
-    { name: 'React & Next.js', level: 92 },
+    { name: 'TypeScript', level: 75 },
+    { name: 'React & Next.js', level: 80 },
     { name: 'Tailwind CSS', level: 98 },
     { name: 'Framer Motion', level: 80 },
-];
-const backendSkills: Skill[] = [
     { name: 'Node.js & Express', level: 88 },
     { name: 'Python & Flask', level: 82 },
-    { name: 'REST & GraphQL APIs', level: 90 },
-    { name: 'PostgreSQL', level: 78 },
-    { name: 'MongoDB', level: 75 },
-    { name: 'Firebase', level: 85 },
+];
+const backendSkills: Skill[] = [
+    { name: 'Problem-Solving', level: 85 },
+    { name: 'Communication', level: 95 },
+    { name: 'Adaptability', level: 90 },
+    { name: 'Time Management', level: 85 },
+    { name: 'Attention to Detail', level: 80 },
+    { name: 'Collaboration', level: 85 },
 ];
 const projects: Project[] = [
   {
