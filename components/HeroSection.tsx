@@ -54,8 +54,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY }) => {
                 style={{
                     backgroundImage: "url('images/img3-1.jpg')",
                     backgroundPosition: "top center",
-                    transform: `translateY(${scrollY * 0.4}px) scale(1.1)`,
-                    willChange: 'transform',
+                    transform: `translateY(${scrollY * 0.5}px) scale(1.05)`,
+                    filter: 'blur(1px)',
+                    willChange: 'transform, filter',
                 }}
             />
             <div className="z-10 relative px-4">
