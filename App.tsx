@@ -17,6 +17,7 @@ import CertificatesSection from './components/CertificatesSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import CertificateModal from './components/CertificateModal';
+import LoadingScreen from './components/LoadingScreen';
 
 // --- DATA ---
 const frontendSkills: Skill[] = [
@@ -142,6 +143,7 @@ const certificates: Certificate[] = [
 
 // --- MAIN APP COMPONENT ---
 const App: React.FC = () => {
+    const [isLoading, setIsLoading] = useState(true);
     const [selectedCertificate, setSelectedCertificate] = useState<Certificate | null>(null);
     const [showAllCertificates, setShowAllCertificates] = useState(false);
     const [scrollY, setScrollY] = useState(0);
@@ -153,13 +155,17 @@ const App: React.FC = () => {
     const aboutSectionRef = useRef<HTMLElement>(null);
 
     useEffect(() => {
+        if (isLoading) return;
+        
         const handleScroll = () => {
             setScrollY(window.scrollY);
 
             if (aboutSectionRef.current) {
                 const elementTop = aboutSectionRef.current.offsetTop;
-                const relativeScroll = window.scrollY - elementTop;
-                setAboutParallaxY(relativeScroll * 0.3);
+                const elementHeight = aboutSectionRef.current.offsetHeight;
+                const screenHeight = window.innerHeight;
+                const relativeScroll = window.scrollY - (elementTop - screenHeight / 2 + elementHeight / 2);
+                setAboutParallaxY(relativeScroll * 0.1);
             }
         };
         window.addEventListener('scroll', handleScroll, { passive: true });
@@ -175,7 +181,7 @@ const App: React.FC = () => {
                     observer.disconnect();
                 }
             },
-            { threshold: 0.1 }
+            { threshold: 0.2 }
         );
 
         if (element) {
@@ -188,8 +194,12 @@ const App: React.FC = () => {
     const visibleCertificates = showAllCertificates ? certificates : certificates.slice(0, 4);
 
     return (
-        <div className="bg-black text-white">
-            <Header />
+        <div className="bg-black text-white min-h-screen antialiased">
+            {isLoading ? (
+                <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />
+            ) : (
+              <>
+                <Header />
 
             <main>
                 <HeroSection scrollY={scrollY} />
