@@ -29,7 +29,7 @@ const SkillsSection = React.forwardRef<HTMLElement, SkillsSectionProps>(
                 : 'bg-neutral-700 text-white opacity-60'
             }`}
           >
-            {skillsAreVisible ? 'Bars Active ✅' : 'Waiting for Scroll 👀'}
+           
           </div>
 
           {/* --- Skill Tabs --- */}
