@@ -15,7 +15,7 @@ const AboutSection = React.forwardRef<HTMLElement, AboutSectionProps>(
                     className="absolute top-0 right-0 h-full w-1/2 bg-cover bg-center opacity-10"
                     style={{
                         backgroundImage: "url('images/img1.jpg')",
-                        backgroundPosition: "bottom center",
+                        backgroundPosition: "top",
                         transform: `translateY(${aboutParallaxY}px)`,
                         willChange: 'transform'
                     }}
@@ -58,7 +58,7 @@ const AboutSection = React.forwardRef<HTMLElement, AboutSectionProps>(
                         hover:scale-105 
                         hover:shadow-[0_0_30px_rgba(16,185,129,0.6)] "
                     />
-</div>
+                </div>
 
                 </div>
             </section>
