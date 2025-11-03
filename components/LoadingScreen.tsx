@@ -30,7 +30,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
         }
         return prev + 1;
       });
-    }, 40); // 40ms * 100 steps = 4 seconds total load time
+    }, 50); // 50ms * 100 steps = 5 seconds total load time
 
     return () => clearInterval(interval);
   }, []);
