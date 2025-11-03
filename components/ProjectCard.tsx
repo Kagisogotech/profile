@@ -4,6 +4,7 @@ import { Project } from '../types';
 
 const ProjectCard: React.FC<Project> = ({ title, description, imageUrl, href, docUrl }) => {
     return (
+        <section id="projects">
         <div className="group">
             <a href={href} target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-lg mb-4">
                 <img src={imageUrl} alt={title} className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500 ease-in-out" />
@@ -24,6 +25,7 @@ const ProjectCard: React.FC<Project> = ({ title, description, imageUrl, href, do
                 )}
             </div>
         </div>
+        </section>
     );
 };
 
