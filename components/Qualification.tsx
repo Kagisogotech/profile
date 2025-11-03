@@ -13,6 +13,7 @@ const education: QualificationItem[] = [
 ];
 
 const work: QualificationItem[] = [
+    { title: 'Digital Associate', source: 'Capaciti', years: 'Jul - Sept' },
     { title: 'Data Analyst Candidate', source: 'Capaciti', years: 'Currently' },
 ];
 
