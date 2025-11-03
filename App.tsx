@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 
 // Import Types
@@ -21,42 +20,50 @@ import LoadingScreen from './components/LoadingScreen';
 
 // --- DATA ---
 const frontendSkills: Skill[] = [
-    { name: 'HTML5 & CSS3', level: 95 },
-    { name: 'JavaScript (ES6+)', level: 85 },
-    { name: 'TypeScript', level: 75 },
-    { name: 'React & Next.js', level: 80 },
-    { name: 'Tailwind CSS', level: 95 },
-    { name: 'Framer Motion', level: 80 },
-    { name: 'Node.js', level: 88 },
-    { name: 'Python', level: 82 },
+  { name: 'HTML5 & CSS3', level: 95 },
+  { name: 'JavaScript (ES6+)', level: 85 },
+  { name: 'TypeScript', level: 75 },
+  { name: 'React & Next.js', level: 80 },
+  { name: 'Tailwind CSS', level: 95 },
+  { name: 'Framer Motion', level: 80 },
+  { name: 'Node.js', level: 88 },
+  { name: 'Python', level: 82 },
 ];
+
 const backendSkills: Skill[] = [
-    { name: 'Problem-Solving', level: 85 },
-    { name: 'Communication', level: 95 },
-    { name: 'Adaptability', level: 90 },
-    { name: 'Time Management', level: 85 },
-    { name: 'Attention to Detail', level: 85 },
-    { name: 'Collaboration', level: 85 },
+  { name: 'Problem-Solving', level: 85 },
+  { name: 'Communication', level: 95 },
+  { name: 'Adaptability', level: 90 },
+  { name: 'Time Management', level: 85 },
+  { name: 'Attention to Detail', level: 85 },
+  { name: 'Collaboration', level: 85 },
 ];
+
 const projects: Project[] = [
   {
     title: 'AI Resume Builder',
-    description: 'An intelligent tool to help users craft the perfect resume, with AI-powered suggestions and professional templates.',
-    imageUrl: 'https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=800&auto=format&fit=crop',
+    description:
+      'An intelligent tool to help users craft the perfect resume, with AI-powered suggestions and professional templates.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=800&auto=format&fit=crop',
     href: 'https://kagisogotech.github.io/Resumebuilder/welcome.html',
     docUrl: 'docs/Smart_Resume_Builder_doc.docx',
   },
   {
     title: 'Sentiment Analysis Tool',
-    description: 'A web application that analyzes text to determine its emotional tone, providing insights for businesses and researchers.',
-    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
+    description:
+      'A web application that analyzes text to determine its emotional tone, providing insights for businesses and researchers.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
     href: 'https://kagisogotech.github.io/SentimentAnalysis/',
     docUrl: 'docs/Sentiment_Analysis_Dashboard_Documentation_Gemini.docx',
   },
   {
     title: 'AI Study Buddy',
-    description: 'An interactive learning companion that simplifies complex topics and makes studying more engaging and effective.',
-    imageUrl: 'https://images.unsplash.com/photo-1677756119517-756a188d2d94?q=80&w=800&auto=format&fit=crop',
+    description:
+      'An interactive learning companion that simplifies complex topics and makes studying more engaging and effective.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1677756119517-756a188d2d94?q=80&w=800&auto=format&fit=crop',
     href: 'https://ai-study-buddy-bmwm.vercel.app/',
     docUrl: 'docs/AI_Study_Buddy_Documentation.docx',
   },
@@ -143,108 +150,113 @@ const certificates: Certificate[] = [
 
 // --- MAIN APP COMPONENT ---
 const App: React.FC = () => {
-    const [isLoading, setIsLoading] = useState(true);
-    const [selectedCertificate, setSelectedCertificate] = useState<Certificate | null>(null);
-    const [showAllCertificates, setShowAllCertificates] = useState(false);
-    const [scrollY, setScrollY] = useState(0);
-    const [aboutParallaxY, setAboutParallaxY] = useState(0);
-    const [activeSkillTab, setActiveSkillTab] = useState<'frontend' | 'backend'>('frontend');
-    const [skillsAreVisible, setSkillsAreVisible] = useState(false);
-    
-    const skillsSectionRef = useRef<HTMLElement>(null);
-    const aboutSectionRef = useRef<HTMLElement>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [selectedCertificate, setSelectedCertificate] = useState<Certificate | null>(null);
+  const [showAllCertificates, setShowAllCertificates] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+  const [aboutParallaxY, setAboutParallaxY] = useState(0);
+  const [activeSkillTab, setActiveSkillTab] = useState<'frontend' | 'backend'>('frontend');
+  const [skillsAreVisible, setSkillsAreVisible] = useState(false);
 
-    useEffect(() => {
-        if (isLoading) return;
-        
-        const handleScroll = () => {
-            setScrollY(window.scrollY);
+  const skillsSectionRef = useRef<HTMLElement>(null);
+  const aboutSectionRef = useRef<HTMLElement>(null);
 
-            if (aboutSectionRef.current) {
-                const elementTop = aboutSectionRef.current.offsetTop;
-                const elementHeight = aboutSectionRef.current.offsetHeight;
-                const screenHeight = window.innerHeight;
-                const relativeScroll = window.scrollY - (elementTop - screenHeight / 2 + elementHeight / 2);
-                setAboutParallaxY(relativeScroll * 0.1);
-            }
-        };
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+  useEffect(() => {
+    if (isLoading) return;
 
-    useEffect(() => {
-        const element = skillsSectionRef.current;
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setSkillsAreVisible(true);
-                    observer.disconnect();
-                }
-            },
-            { threshold: 0.2 }
-        );
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
 
-        if (element) {
-            observer.observe(element);
+      if (aboutSectionRef.current) {
+        const elementTop = aboutSectionRef.current.offsetTop;
+        const elementHeight = aboutSectionRef.current.offsetHeight;
+        const screenHeight = window.innerHeight;
+        const relativeScroll =
+          window.scrollY - (elementTop - screenHeight / 2 + elementHeight / 2);
+        setAboutParallaxY(relativeScroll * 0.1);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isLoading]);
+
+  useEffect(() => {
+    const element = skillsSectionRef.current;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setSkillsAreVisible(true);
+          observer.disconnect();
         }
-
-        return () => observer.disconnect();
-    }, []);
-
-    const visibleCertificates = showAllCertificates ? certificates : certificates.slice(0, 4);
-
-    return (
-        <div className="bg-black text-white min-h-screen antialiased">
-            {isLoading ? (
-                <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />
-            ) : (
-              <>
-                <Header />
-
-            <main>
-                <HeroSection scrollY={scrollY} />
-                <AboutSection ref={aboutSectionRef} aboutParallaxY={aboutParallaxY} />
-                <ServicesSection />
-                <SkillsSection 
-                    ref={skillsSectionRef}
-                    activeSkillTab={activeSkillTab}
-                    setActiveSkillTab={setActiveSkillTab}
-                    frontendSkills={frontendSkills}
-                    backendSkills={backendSkills}
-                    skillsAreVisible={skillsAreVisible}
-                />
-                <Qualification />
-                <ResumeSection />
-                <PortfolioSection projects={projects} />
-                <CertificatesSection 
-                    certificates={certificates}
-                    visibleCertificates={visibleCertificates}
-                    showAllCertificates={showAllCertificates}
-                    setShowAllCertificates={setShowAllCertificates}
-                    setSelectedCertificate={setSelectedCertificate}
-                />
-                <ContactSection />
-            </main>
-
-            <Footer />
-
-            {selectedCertificate && (
-                <CertificateModal
-                    certificate={selectedCertificate}
-                    onClose={() => setSelectedCertificate(null)}
-                />
-            )}
-             <style>{`
-                @keyframes fade-in {
-                    from { opacity: 0; transform: translateY(10px); }
-                    to { opacity: 1; transform: translateY(0); }
-                }
-                .animate-fade-in {
-                    animation: fade-in 0.5s ease-out forwards;
-                }
-            `}</style>
-        </div>
+      },
+      { threshold: 0.2 }
     );
+
+    if (element) {
+      observer.observe(element);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const visibleCertificates = showAllCertificates ? certificates : certificates.slice(0, 4);
+
+  return (
+    <div className="bg-black text-white min-h-screen antialiased">
+      {isLoading ? (
+        <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />
+      ) : (
+        <>
+          <Header />
+
+          <main>
+            <HeroSection scrollY={scrollY} />
+            <AboutSection ref={aboutSectionRef} aboutParallaxY={aboutParallaxY} />
+            <ServicesSection />
+            <SkillsSection
+              ref={skillsSectionRef}
+              activeSkillTab={activeSkillTab}
+              setActiveSkillTab={setActiveSkillTab}
+              frontendSkills={frontendSkills}
+              backendSkills={backendSkills}
+              skillsAreVisible={skillsAreVisible}
+            />
+            <Qualification />
+            <ResumeSection />
+            <PortfolioSection projects={projects} />
+            <CertificatesSection
+              certificates={certificates}
+              visibleCertificates={visibleCertificates}
+              showAllCertificates={showAllCertificates}
+              setShowAllCertificates={setShowAllCertificates}
+              setSelectedCertificate={setSelectedCertificate}
+            />
+            <ContactSection />
+          </main>
+
+          <Footer />
+
+          {selectedCertificate && (
+            <CertificateModal
+              certificate={selectedCertificate}
+              onClose={() => setSelectedCertificate(null)}
+            />
+          )}
+
+          <style>{`
+            @keyframes fade-in {
+              from { opacity: 0; transform: translateY(10px); }
+              to { opacity: 1; transform: translateY(0); }
+            }
+            .animate-fade-in {
+              animation: fade-in 0.5s ease-out forwards;
+            }
+          `}</style>
+        </>
+      )}
+    </div>
+  );
 };
 
 export default App;
