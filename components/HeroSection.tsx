@@ -52,6 +52,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY }) => {
             <div
                 className="absolute inset-0 bg-black/50"
                 style={{
+                    backgroundImage: "url('images/img3-1.jpg')",
+                    backgroundPosition: "top center",
                     transform: `translateY(${scrollY * 0.4}px) scale(1.1)`,
                     willChange: 'transform',
                 }}
