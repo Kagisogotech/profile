@@ -193,10 +193,8 @@ const App: React.FC = () => {
       { threshold: 0.2 }
     );
 
-    if (element) {
+    if (element) 
       observer.observe(element);
-    }
-
     return () => observer.disconnect();
   }, []);
 
