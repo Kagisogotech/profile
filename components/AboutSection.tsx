@@ -15,6 +15,7 @@ const AboutSection = React.forwardRef<HTMLElement, AboutSectionProps>(
                     className="absolute top-0 right-0 h-full w-1/2 bg-cover bg-center opacity-10"
                     style={{
                         backgroundImage: "url('images/img1.jpg')",
+                        backgroundPosition: "center",
                         transform: `translateY(${aboutParallaxY}px)`,
                         willChange: 'transform'
                     }}
