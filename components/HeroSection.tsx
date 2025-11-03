@@ -50,7 +50,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY }) => {
             style={{ willChange: 'transform' }}
         >
             <div
-                className="absolute inset-0 bg-black/50"
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
                 style={{
                     backgroundImage: "url('images/img3-1.jpg')",
                     backgroundPosition: "top center",
