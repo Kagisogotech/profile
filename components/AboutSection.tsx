@@ -49,7 +49,7 @@ const AboutSection = React.forwardRef<HTMLElement, AboutSectionProps>(
 
                     <div className="relative h-96">
                         <img 
-                        src="/images/img2.jpg" 
+                        src="/images/DSC09926-5.jpg" 
                         alt="Creative workspace" 
                         className="absolute bottom-20px right-0 w-2/3 h-3/3 
                         object-cover rounded-lg border-6 border-black 
