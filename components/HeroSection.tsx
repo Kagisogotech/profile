@@ -11,7 +11,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY }) => {
     const [isDeleting, setIsDeleting] = useState(false);
     const [delta, setDelta] = useState(200 - Math.random() * 100);
 
-    const rolesToRotate = ["Front-end Developer"], ["AI Prompt Engineer"];
+    const rolesToRotate = ["Front-end Developer"];
     const period = 2000;
 
     useEffect(() => {
