@@ -52,7 +52,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY }) => {
             <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
                 style={{
-                    backgroundImage: "url('images/DSC09926-5.jpg')",
+                    backgroundImage: "url('images/img3-1.jpg')",
                     backgroundPosition: "top center",
                     transform: `translateY(${scrollY * 0.5}px) scale(1.05)`,
                     filter: 'blur(1px)',
