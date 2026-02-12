@@ -8,13 +8,13 @@ type QualificationItem = {
 };
 
 const education: QualificationItem[] = [
-    { title: 'National Senior Certificate (IT & Science)', source: 'Lyttelton Manor High School', years: '2018 - 2022' },
     { title: 'NQF Level 5 in Software Development', source: 'Jeppe College', years: '2023 - 2025' },
 ];
 
 const work: QualificationItem[] = [
     { title: 'Digital Associate', source: 'Capaciti', years: 'Jul - Sept' },
-    { title: 'Data Analyst Candidate', source: 'Capaciti', years: 'Currently' },
+    { title: 'Data Analyst Candidate', source: 'Capaciti', years: 'Oct - Nov' },
+    { title: 'HR Ops Intern', source: 'Naspers/Prosus', years: 'Dec - Currently' },
 ];
 
 const Timeline: React.FC<{ items: QualificationItem[] }> = ({ items }) => (
