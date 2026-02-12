@@ -14,17 +14,6 @@ const ResumeSection: React.FC = () => {
                         style={{ minHeight: '500px' }}
                     />
                 </div>
-                <a 
-                    href="/Kagiso_Monene_CV.pdf" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="border border-emerald-500 text-emerald-400 hover:bg-emerald-500 hover:text-black px-8 py-3 rounded-full text-sm font-semibold transition-all duration-300 flex items-center group mx-auto w-fit"
-                >
-                    Download Resume
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                    </svg>
-                </a>
             </div>
 
 
